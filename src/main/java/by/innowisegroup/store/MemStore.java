@@ -11,6 +11,10 @@ public class MemStore implements Store {
 
     @Override
     public User add(User user) {
+        if(user != null){
+            this.users.add(user);
+            return user;
+        }
         return null;
     }
 

@@ -1,6 +1,5 @@
 package by.innowisegroup.model;
 
-import javax.management.relation.Role;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +46,7 @@ public class User implements Serializable {
     }
 
     public List<Role> getRoles() {
-        return roles;
+        return this.roles;
     }
 
     public void setRole(Role role) {
