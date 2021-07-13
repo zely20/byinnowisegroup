@@ -9,29 +9,17 @@ import java.util.Objects;
 public class User implements Serializable {
 
     private static final long serialVersionUID = 123456789L;
-    private String id;
     private String name;
     private String surname;
     private String email;
     private List<Role> roles = new ArrayList<Role>(2);
     private List<String> phones = new ArrayList<String>(3);
 
-    public static User of(String name, String surname, String email) {
-        User user = new User();
-        user.name = name;
-        user.surname = surname;
-        return user;
-    }
-    public User() {
-    }
+    public User(String name, String surname, String email) {
 
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
     }
 
     public String getName() {
@@ -79,8 +67,7 @@ public class User implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) &&
-                Objects.equals(name, user.name) &&
+        return  Objects.equals(name, user.name) &&
                 Objects.equals(surname, user.surname) &&
                 Objects.equals(email, user.email) &&
                 Objects.equals(roles, user.roles) &&
@@ -89,13 +76,12 @@ public class User implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, email, roles, phones);
+        return Objects.hash(name, surname, email, roles, phones);
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
