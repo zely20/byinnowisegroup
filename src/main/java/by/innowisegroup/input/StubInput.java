@@ -20,4 +20,14 @@ public class StubInput implements Input {
     public int askInt(String question) {
         return 0;
     }
+
+    @Override
+    public int askInt(String question, int max) {
+        return 0;
+    }
+
+    @Override
+    public String askWithPattern(String question) {
+        return answers[position++];
+    }
 }
