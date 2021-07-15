@@ -1,16 +1,20 @@
 package by.innowisegroup.action;
 
 import by.innowisegroup.input.Input;
+import by.innowisegroup.model.User;
 import by.innowisegroup.store.Store;
 
 public class ShowAllUserAction implements Action{
     @Override
     public String name() {
-        return null;
+        return "=== Show All Users ===";
     }
 
     @Override
     public boolean execute(Input input, Store memTracker) {
-        return false;
+        for (User user : memTracker.findAll()) {
+            System.out.println(user);
+        }
+        return true;
     }
 }

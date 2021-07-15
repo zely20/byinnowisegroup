@@ -3,6 +3,7 @@ package by.innowisegroup;
 import by.innowisegroup.action.Action;
 import by.innowisegroup.action.CreateUserAction;
 import by.innowisegroup.action.ExitAction;
+import by.innowisegroup.action.ShowAllUserAction;
 import by.innowisegroup.input.ConsoleInput;
 import by.innowisegroup.input.Input;
 import by.innowisegroup.input.ValidInput;
@@ -32,6 +33,7 @@ public class Run {
         Input validate = new ValidInput(input);
         List<Action> actions = new ArrayList<>();
         actions.add(new CreateUserAction());
+        actions.add(new ShowAllUserAction());
         actions.add(new ExitAction());
             Store tracker = new MemStore();
             new Run().init(validate, tracker, actions);

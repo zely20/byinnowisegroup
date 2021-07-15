@@ -30,7 +30,7 @@ public class MemStore implements Store {
 
     @Override
     public List<User> findAll() {
-        return null;
+        return users;
     }
 
     @Override
