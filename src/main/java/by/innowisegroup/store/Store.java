@@ -10,4 +10,6 @@ public interface Store {
     List<User> findAll();
     void init();
     void save();
+    boolean delete(Integer id);
+    User findById(Integer id);
 }

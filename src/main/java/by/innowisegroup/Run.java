@@ -21,7 +21,7 @@ public class Run {
             for(int i = 0; i < actions.size(); i++) {
                 System.out.println(actions.get(i).name() + " for choose enter number " + (i+1));
             }
-            int select = input.askInt("Select: ", 3);
+            int select = input.askInt("Select: ", actions.size());
             Action action = actions.get(select - 1);
             run = action.execute(input, memTracker);
         }
