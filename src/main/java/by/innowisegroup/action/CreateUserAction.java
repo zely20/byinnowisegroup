@@ -25,7 +25,7 @@ public class CreateUserAction implements Action {
         int quantityNumberPhone = input.askInt("Please select the number of telephone numbers that you want to save from 1 to 3",3);
         for (int i = 0; i < quantityNumberPhone; i++){
             String phone = input.askWithPattern("Enter phone " + (i + 1)+": ", PHONE_PATTERN);
-            if(phone != null && phone != ""){
+            if(phone != null && !phone.equals("")){
                 user.setPhone(phone);
             }
         }
@@ -45,7 +45,6 @@ public class CreateUserAction implements Action {
             user.setRole(Role.values()[indexRoleTwo]);
         }
         memStore.add(user);
-        System.out.println(user);
         return true;
     }
 }

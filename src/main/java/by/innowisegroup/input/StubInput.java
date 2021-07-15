@@ -1,7 +1,5 @@
 package by.innowisegroup.input;
 
-import by.innowisegroup.input.Input;
-
 public class StubInput implements Input {
 
     private String[] answers;
@@ -18,12 +16,12 @@ public class StubInput implements Input {
 
     @Override
     public int askInt(String question) {
-        return 0;
+        return Integer.valueOf(answers[position++]);
     }
 
     @Override
     public int askInt(String question, int max) {
-        return 0;
+        return Integer.valueOf(answers[position++]);
     }
 
     @Override
