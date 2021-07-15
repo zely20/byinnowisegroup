@@ -1,7 +1,4 @@
-package by.innowisegroup.input;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+package by.innowisegroup.IO;
 
 public class ValidInput implements Input {
 

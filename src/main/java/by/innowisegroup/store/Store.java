@@ -7,9 +7,7 @@ import java.util.List;
 public interface Store {
 
     User add(User user);
-    boolean replace(Integer id, User user);
-    boolean delete(Integer id);
     List<User> findAll();
-    List<User> findByName(String key);
-    User findById(Integer id);
+    void init();
+    void save();
 }

@@ -1,4 +1,4 @@
-package by.innowisegroup.input;
+package by.innowisegroup.IO;
 
 import org.junit.Test;
 

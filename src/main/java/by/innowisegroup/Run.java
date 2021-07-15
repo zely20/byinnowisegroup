@@ -4,9 +4,9 @@ import by.innowisegroup.action.Action;
 import by.innowisegroup.action.CreateUserAction;
 import by.innowisegroup.action.ExitAction;
 import by.innowisegroup.action.ShowAllUserAction;
-import by.innowisegroup.input.ConsoleInput;
-import by.innowisegroup.input.Input;
-import by.innowisegroup.input.ValidInput;
+import by.innowisegroup.IO.ConsoleInput;
+import by.innowisegroup.IO.Input;
+import by.innowisegroup.IO.ValidInput;
 import by.innowisegroup.store.MemStore;
 import by.innowisegroup.store.Store;
 
@@ -21,8 +21,7 @@ public class Run {
             for(int i = 0; i < actions.size(); i++) {
                 System.out.println(actions.get(i).name() + " for choose enter number " + (i+1));
             }
-            //actions.forEach(action -> System.out.println(action.name() + "Please enter " + ));
-            int select = input.askInt("Select: ", 2);
+            int select = input.askInt("Select: ", 3);
             Action action = actions.get(select - 1);
             run = action.execute(input, memTracker);
         }
@@ -36,6 +35,7 @@ public class Run {
         actions.add(new ShowAllUserAction());
         actions.add(new ExitAction());
             Store tracker = new MemStore();
+            tracker.init();
             new Run().init(validate, tracker, actions);
     }
 }

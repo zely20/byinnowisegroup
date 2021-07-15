@@ -1,6 +1,6 @@
 package by.innowisegroup.action;
 
-import by.innowisegroup.input.Input;
+import by.innowisegroup.IO.Input;
 import by.innowisegroup.model.User;
 import by.innowisegroup.store.Store;
 

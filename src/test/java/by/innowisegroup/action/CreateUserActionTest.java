@@ -1,6 +1,6 @@
 package by.innowisegroup.action;
 
-import by.innowisegroup.input.StubInput;
+import by.innowisegroup.IO.StubInput;
 import by.innowisegroup.model.Role;
 import by.innowisegroup.model.User;
 import by.innowisegroup.store.MemStore;
