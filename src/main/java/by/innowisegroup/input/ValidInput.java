@@ -24,6 +24,8 @@ public class ValidInput implements Input {
             try {
                 value = input.askInt(question);
                 invalid = false;
+            } catch (IllegalStateException moe) {
+                System.out.println("Please select validate data again.");
             } catch (NumberFormatException nfe) {
                 System.out.println("Please enter validate data again.");
             }
@@ -40,7 +42,7 @@ public class ValidInput implements Input {
                 value = input.askInt(question, max);
                 invalid = false;
             } catch (IllegalStateException moe) {
-                System.out.println("Please select key from menu.");
+                System.out.println("Please enter validate data again.");
             } catch (NumberFormatException nfe) {
                 System.out.println("Please enter validate data again.");
             }
@@ -49,18 +51,18 @@ public class ValidInput implements Input {
     }
 
     public String askWithPattern(String question, String param) {
-        boolean invalid = false;
+        boolean invalid = true;
         String value = "";
         do {
             try {
-                value = input.askStr(question);
-                Pattern pattern = Pattern.compile(param);
-                Matcher matcher = pattern.matcher(value);
-                invalid = matcher.matches();
+                value = input.askWithPattern(question, param);
+                invalid = false;
+            } catch (IllegalStateException moe) {
+                System.out.println("Please enter validate data again.");
             } catch (NumberFormatException nfe) {
                 System.out.println("Please enter validate data again.");
             }
-        } while (!invalid);
+        } while (invalid);
         return value;
     }
 }

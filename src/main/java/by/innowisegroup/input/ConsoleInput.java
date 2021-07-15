@@ -1,6 +1,8 @@
 package by.innowisegroup.input;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ConsoleInput implements Input {
 
@@ -27,7 +29,13 @@ public class ConsoleInput implements Input {
     }
 
     @Override
-    public String askWithPattern(String question) {
-        return askStr(question);
+    public String askWithPattern(String question, String param) {
+        String result = askStr(question);
+        Pattern pattern = Pattern.compile(param);
+        Matcher matcher = pattern.matcher(result);
+        if(!matcher.matches()) {
+            throw new IllegalStateException(String.format("Please check data with pattern"));
+        }
+        return result;
     }
 }

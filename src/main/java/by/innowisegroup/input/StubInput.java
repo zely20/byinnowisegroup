@@ -27,7 +27,7 @@ public class StubInput implements Input {
     }
 
     @Override
-    public String askWithPattern(String question) {
+    public String askWithPattern(String question, String param) {
         return answers[position++];
     }
 }
