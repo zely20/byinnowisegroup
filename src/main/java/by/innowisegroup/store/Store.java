@@ -13,4 +13,5 @@ public interface Store {
     boolean delete(Integer id);
     Integer indexOf(Integer id);
     User findById(Integer id);
+    boolean replace(User user);
 }

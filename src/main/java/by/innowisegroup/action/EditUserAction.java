@@ -16,10 +16,10 @@ public class EditUserAction implements Action {
     }
 
     @Override
-    public boolean execute(Input input, Store memTracker) {
-        memTracker.findAll().forEach(System.out::println);
-        Integer id = input.askInt("select ID of user which you want to edit: ", memTracker.findAll().size());
-        User user = memTracker.findById(id);
+    public boolean execute(Input input, Store memStore) {
+        memStore.findAll().forEach(System.out::println);
+        Integer id = input.askInt("select ID of user which you want to edit: ", memStore.findAll().size());
+        User user = memStore.findById(id);
 
         String name = input.askStr("Old name: " + user.getName() + ". If you want to keep the old name, press \"ENTER\"");
         if (isEdit(name)) {
@@ -82,6 +82,7 @@ public class EditUserAction implements Action {
         }
         System.out.println();
         System.out.println(user);
+        memStore.replace(user);
         return true;
     }
 

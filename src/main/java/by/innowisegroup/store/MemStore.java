@@ -65,4 +65,13 @@ public class MemStore implements Store {
     public User findById(Integer id) {
         return this.users.get(indexOf(id));
     }
+
+    public boolean replace(User item) {
+        int index = users.indexOf(item);
+        if (index != -1) {
+            users.set(index, item);
+            return true;
+        }
+        return false;
+    }
 }
