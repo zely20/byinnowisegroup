@@ -16,7 +16,7 @@ public class Run {
         boolean run = true;
         while (run) {
             for(int i = 0; i < actions.size(); i++) {
-                System.out.println(actions.get(i).name() + " for choose enter number " + (i+1));
+                System.out.println(actions.get(i).name() + " enter number " + (i+1));
             }
             int select = input.askInt("Select: ", actions.size());
             Action action = actions.get(select - 1);
@@ -30,7 +30,8 @@ public class Run {
         List<Action> actions = new ArrayList<>();
         actions.add(new CreateUserAction());
         actions.add(new ShowAllUserAction());
-        actions.add(new DeleteAction());
+        actions.add(new EditUserAction());
+        actions.add(new DeleteUserAction());
         actions.add(new ExitAction());
             Store tracker = new MemStore();
             tracker.init();

@@ -60,4 +60,9 @@ public class MemStore implements Store {
         }
         return -1;
     }
+
+    @Override
+    public User findById(Integer id) {
+        return this.users.get(indexOf(id));
+    }
 }

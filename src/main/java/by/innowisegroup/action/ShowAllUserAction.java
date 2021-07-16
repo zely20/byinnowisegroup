@@ -12,9 +12,7 @@ public class ShowAllUserAction implements Action{
 
     @Override
     public boolean execute(Input input, Store memTracker) {
-        for (User user : memTracker.findAll()) {
-            System.out.println(user);
-        }
+        memTracker.findAll().forEach(System.out::println);
         return true;
     }
 }

@@ -12,4 +12,5 @@ public interface Store {
     void save();
     boolean delete(Integer id);
     Integer indexOf(Integer id);
+    User findById(Integer id);
 }

@@ -3,7 +3,7 @@ package by.innowisegroup.action;
 import by.innowisegroup.IO.Input;
 import by.innowisegroup.store.Store;
 
-public class DeleteAction implements Action {
+public class DeleteUserAction implements Action {
     @Override
     public String name() {
         return "=== Delete User ===";
