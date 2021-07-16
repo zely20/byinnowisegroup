@@ -24,7 +24,7 @@ public class CreateUserAction implements Action {
         User user = new User(name, surname, email);
         int quantityNumberPhone = input.askInt("Please select the number of telephone numbers that you want to save from 1 to 3",3);
         for (int i = 0; i < quantityNumberPhone; i++){
-            String phone = input.askWithPattern("Enter phone " + (i + 1)+": ", PHONE_PATTERN);
+            String phone = input.askWithPattern("Enter phone like 375 ** *******" + (i + 1)+": ", PHONE_PATTERN);
             if(phone != null && !phone.equals("")){
                 user.setPhone(phone);
             }
@@ -33,7 +33,7 @@ public class CreateUserAction implements Action {
         for (int i = 0; i <= 2; i++) {
             System.out.println(i + 1 + ". " + Role.values()[i].name());
         }
-            int indexRole = input.askInt("Choose Role First Level: ") - 1;
+            int indexRole = input.askInt("Choose Role First Level or Super_User: ") - 1;
         if(Role.values()[indexRole].equals(Role.SUPER_ADMIN)){
             user.setRole(Role.SUPER_ADMIN);
         } else {

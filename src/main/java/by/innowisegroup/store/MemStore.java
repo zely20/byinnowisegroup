@@ -17,7 +17,7 @@ public class MemStore implements Store {
     public void init() {
         if (new File("users.bin").isFile()) {
             FileOutput.readFile("users.bin", users);
-            id = users.size();
+            id = this.users.get(users.size()-1).getId();
         }
     }
 
@@ -43,21 +43,21 @@ public class MemStore implements Store {
 
     @Override
     public boolean delete(Integer id) {
-        User user = findById(id);
-        if (user != null) {
-            users.remove(user);
+        int index = indexOf(id);
+        if (index >= 0) {
+            this.users.remove(index);
             return true;
         }
         return false;
     }
 
     @Override
-    public User findById(Integer id) {
-        for (User user : users) {
-            if (user.getId().equals(id)) {
-                return user;
+    public Integer indexOf(Integer id) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getId().equals(id)) {
+                return i;
             }
         }
-        return null;
+        return -1;
     }
 }

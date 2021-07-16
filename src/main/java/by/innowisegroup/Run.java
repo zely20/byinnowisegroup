@@ -1,9 +1,6 @@
 package by.innowisegroup;
 
-import by.innowisegroup.action.Action;
-import by.innowisegroup.action.CreateUserAction;
-import by.innowisegroup.action.ExitAction;
-import by.innowisegroup.action.ShowAllUserAction;
+import by.innowisegroup.action.*;
 import by.innowisegroup.IO.ConsoleInput;
 import by.innowisegroup.IO.Input;
 import by.innowisegroup.IO.ValidInput;
@@ -33,6 +30,7 @@ public class Run {
         List<Action> actions = new ArrayList<>();
         actions.add(new CreateUserAction());
         actions.add(new ShowAllUserAction());
+        actions.add(new DeleteAction());
         actions.add(new ExitAction());
             Store tracker = new MemStore();
             tracker.init();
